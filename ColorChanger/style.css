@@ -1,0 +1,85 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgb(91, 109, 93);
+    color: #fff;
+}
+
+.logo {
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: right;
+    border-right: 1px solid #bbb;
+}
+
+li:last-child {
+    border-right: none;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #04AA6D;
+}
+
+.container {
+    font-size: 24px;
+    margin: 25px;
+    width: 350px;
+    height: 200px;
+    outline: dashed 1px black;
+    /* Setup */
+    position: relative;
+}
+
+.click-me-button {
+    width: 150px;
+    height: 100px;
+    background-color: rgb(160, 169, 169);
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    margin: -25px 0 0 -25px;
+    font-weight: bold;
+    border-radius: 30%;
+    border-width: 0.5vb;
+    border-style: solid;
+    border-color: #111;
+    font-size: large;
+}
+
+.color-name {
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    left: 44%;
+    font-weight: bold;
+}
+
+body {
+    font-family: cursive;
+}
