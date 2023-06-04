@@ -41,31 +41,15 @@ const menu = [
 ];
 
 const menuSection = document.querySelector(".menu-section");
-const filterButtons = document.querySelectorAll(".filter-button");
+const buttons = this.document.querySelector(".buttons");
 
 // load menu
 window.addEventListener('DOMContentLoaded', function () {
     displayMenuSection(menu);
+    displayMenuButtons();
 });
 
-// filter menu items
-filterButtons.forEach(button => {
-    button.addEventListener('click', function(e){
-        const continent = e.currentTarget.dataset.id;
-        const menuContinent = menu.filter(function(menuItem){
-            if(menuItem.continent === continent)
-                return menuItem;
-        });
-
-        if(continent === "All"){
-            displayMenuSection(menu);
-        }else{
-            displayMenuSection(menuContinent);
-        }
-    });
-});
-
-function displayMenuSection(menu){
+function displayMenuSection(menu) {
     let displayMenu = menu.map(function (item) {
 
         return `<article class="menu-item">
@@ -78,11 +62,44 @@ function displayMenuSection(menu){
                 ${item.description}
             </p>
             <p class="item-price">
-               ${item.price}
+               Price: ${item.price}$
             </p>
         </div>
          </article>`;
     })
     displayMenu = displayMenu.join("");
     menuSection.innerHTML = displayMenu
+}
+
+function displayMenuButtons(){
+    const continents = menu.reduce(function (values, item) {
+
+        if (!values.includes(item.continent)) {
+            values.push(item.continent);
+        }
+        return values;
+    }, ['All'])
+
+    const continentButtons = continents.map(function (continent) {
+        return `<button class="filter-button" type="button" data-id=${continent}>${continent}</button>`
+    }).join("");
+
+    buttons.innerHTML = continentButtons;
+    const filterButtons = document.querySelectorAll(".filter-button");
+    // filter menu items
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function (e) {
+            const continent = e.currentTarget.dataset.id;
+            const menuContinent = menu.filter(function (menuItem) {
+                if (menuItem.continent === continent)
+                    return menuItem;
+            });
+
+            if (continent === "All") {
+                displayMenuSection(menu);
+            } else {
+                displayMenuSection(menuContinent);
+            }
+        });
+    });
 }
