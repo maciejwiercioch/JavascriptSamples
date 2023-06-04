@@ -1,0 +1,12 @@
+img {
+    width: 24vi; /* or any custom size */
+    height: 20vi; 
+}
+
+.menu-section {
+    display: inline-block;
+}
+
+.menu-section article {
+    float: left;
+}
