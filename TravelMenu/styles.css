@@ -3,8 +3,15 @@ img {
     height: 20vi; 
 }
 
+h1{
+    font-size: 30px;
+    color: brown;
+    font-style: oblique;
+}
+
 .menu-section {
     margin-left:5%;
+    margin-top: 3%;
     display: inline-block;
 }
 
@@ -19,4 +26,18 @@ img {
 
 .buttons{
     text-align:center;
+}
+
+.filter-button{
+    background-color: #9da9b5;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 15px 32px;
+    transition-duration: 0.4s;
+}
+
+.filter-button:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
