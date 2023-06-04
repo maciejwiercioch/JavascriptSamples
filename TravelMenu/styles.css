@@ -4,9 +4,15 @@ img {
 }
 
 .menu-section {
+    margin-left:5%;
     display: inline-block;
 }
 
 .menu-section article {
     float: left;
+    padding: 2%;
+}
+
+.title {
+    text-align: center;
 }
